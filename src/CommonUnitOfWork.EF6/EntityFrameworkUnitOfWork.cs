@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
+﻿using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace CommonUnitOfWork.EF6
@@ -15,6 +11,8 @@ namespace CommonUnitOfWork.EF6
         public EntityFrameworkUnitOfWork() : this(false) { }
 
         public EntityFrameworkUnitOfWork(bool beginTransaction) : this("DefaultConnection", null, false) { }
+
+        public EntityFrameworkUnitOfWork(string nameOrConnectionString) : this(nameOrConnectionString, null, false) { }
 
         public EntityFrameworkUnitOfWork(string nameOrConnectionString, string schema) : this(nameOrConnectionString, schema, false) { }
 
